@@ -38,12 +38,12 @@
     
         <div class="row p-4">
             <div class="col-md-12 p-4">
-                <p>
+                <p style="word-break: break-all;">
                     Mon idée générale sur MOHAMED : <strong>{{ doc.tech.general_idea }}</strong>
                 </p>
             </div>
             <div class="col-md-12 p-4">
-                <p>
+                <p style="word-break: break-all;">
                     Nous avons travaillé ensemble avec : 
                     <strong><span *ngFor="let i of doc.tech.techs">{{ i }} / </span></strong>
                 </p>
@@ -55,17 +55,17 @@
                 Sur une échelle de 0 à 10, la capacité de réaction de monsieur <strong>{{ name }}</strong> est de {{ doc.tech.reaction }}.
             </div>
             <div class="col-md-12 p-4">
-                <p>
+                <p style="word-break: break-all;">
                     Mon aspect favori sur <strong>{{ name }}</strong> : <i><b>{{ doc.tech.favorite_look }}</b></i>
                 </p>
             </div>
             <div class="col-md-12 p-4">
-                <p>
+                <p style="word-break: break-all;">
                     Les choses à améliorer : <strong>{{ doc.tech.improvements }}</strong>
                 </p>
             </div>
             <div class="col-md-12 p-4 mb-3">
-                <p>
+                <p style="word-break: break-all;">
                     Suggestions : <strong><i>{{ doc.tech.sug }}</i></strong>
                 </p>
             </div>
