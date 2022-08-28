@@ -25,7 +25,14 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "html2canvas",
+              "rgbcolor",
+              "raf",
+              "core-js/modules/web.dom-collections.iterator.js",
+              "core-js/modules/es.string.split.js"
+           ]
           },
           "configurations": {
             "production": {

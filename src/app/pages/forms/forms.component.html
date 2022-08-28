@@ -1,0 +1,241 @@
+<div class="container-fluid p-0">
+    <div class="jumbotron p-5">
+        <h1 class="display-4">Formulaire de satisfaction</h1>
+        <p class="lead">Vous êtes invités à noter votre appréciation vis-à-vis de la prestation de <strong>MOHAMED ZIDANE</strong>.</p>
+        <hr class="my-4">
+        <small>Veuillez renseignez tous les champs avec transparence et sincérité.</small>        
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <div class="container ">
+        <form>
+            <div class="row company-info " style="margin-bottom: 6rem;" >
+              <div class="col-md-6 mb-4">
+                <label for="exampleFormControlInput1">Nom de l'entreprise <small>( <span class="text-danger">*</span> )</small></label>
+                <input type="text"  class="form-control" placeholder="" name="companyName" [(ngModel)]="questionnary.company.name">
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="exampleFormControlSelect1">Sélectionnez le pays <small>( <span class="text-danger">*</span> )</small></label>
+                <select class="form-control" id="exampleFormControlSelect1" *ngIf="countries" name="country" [(ngModel)]="questionnary.company.country">
+                    <option *ngFor="let item of countries" value="{{ item }}">{{ item }}</option>                
+                </select>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="exampleFormControlInput1">Nom du supérieur hiérarchique <small>( <span class="text-danger">*</span> )</small></label>
+                <input type="text" class="form-control" placeholder="" name="supervisoir" [(ngModel)]="questionnary.company.supervisor">
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="exampleFormControlInput1">Contact tel du supérieur hiérarchique <small>( <span class="text-danger">*</span> )</small></label>
+                <input type="text" class="form-control" placeholder="" name="tel_supervisor" [(ngModel)]="questionnary.company.tel_supervisor">
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="exampleFormControlInput1">Adresse e-mail du supérieur hiérarchique <small>( <span class="text-danger">*</span> )</small></label>
+                <input type="text" class="form-control" placeholder="" name="mail_supervisoir" [(ngModel)]="questionnary.company.mail_supervisoir">
+              </div>
+            </div>
+
+            <div class="row work-info " style="margin-bottom: 6rem;" >
+                <div class="col-md-6 mb-4">
+                    <label for="exampleFormControlSelect1">Type de service <small>( <span class="text-danger">*</span> )</small></label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="work_type" [(ngModel)]="questionnary.work.type">
+                      <option value="développement web">Développement web</option>
+                      <option value="développement mobile">Développement mobile</option>
+                      <option value="sécurité web">Sécurité web</option>
+                      <option value="lead IT">Lead IT</option>
+                      <option value="formation">Formation</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label for="exampleFormControlSelect1">Cadre de travail <small>( <span class="text-danger">*</span> )</small></label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="work_contract" [(ngModel)]="questionnary.work.contract">
+                      <option value="consultance">Consultance</option>
+                      <option value="cdd cdi">CDD / CDI</option>
+                      <option value="freelance">Freelance</option>
+                      <option value="stage">Stage</option>                      
+                    </select>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label for="exampleFormControlInput1">Durée du travail (en nbr de mois) <small>( <span class="text-danger">*</span> )</small></label>
+                    <input type="number" min="0" class="form-control" placeholder="" name="work_duration" [(ngModel)]="questionnary.work.duration"> 
+                </div>                
+            </div>
+
+            <div class="row question-info " style="margin-bottom: 6rem;" >
+                <div class="col-md-12 mb-4">
+                    <label for="exampleFormControlInput1">Quel est votre avis général sur <strong>{{ name }}</strong> <small>( <span class="text-danger">*</span> )</small></label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="tech_general_idea" [(ngModel)]="questionnary.tech.general_idea"></textarea>
+                </div>  
+                <div class="col-md-12 mb-4">
+                    <label for="exampleFormControlSelect1">Sur quelle technologie avez-vous travaillez avec <strong>{{ name }}</strong> ? <small>( <span class="text-danger">*</span> )</small></label>
+                    <div class="form-group">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Web Design" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">Web Design</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Angular" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">Angular</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="VueJS" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">VueJS</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="JavaScript" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">JavaScript</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="PHP" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">PHP</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Laravel" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">Laravel</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Symphony" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">Symphony</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="NodeJS" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">NodeJS</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="MySQL" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">MySQL</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="MongoDB" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">MongoDB</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Cassandra" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">Cassandra</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Redis" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">Redis</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Neo4J" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">Neo4J</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Docker" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">Docker</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="K8s" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">K8s</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Jenkins" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">Jenkins</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Mocha/Jest" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">Mocha/Jest</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="AWS" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">AWS</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Promeutheus" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">Promeutheus</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Grafana" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">Grafana</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Chef" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">Chef</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="IONIC" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">IONIC</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Firebase" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">Firebase</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="SpringBoot" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">SpringBoot</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="JEE" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox2">JEE</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Keycloack" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">Keycloack</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Trafic web security" name="p" (change)="onChecked($event)">
+                            <label class="form-check-label" for="inlineCheckbox1">Trafic web security</label>
+                          </div>
+                          
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label for="exampleFormControlSelect1">Sur une échelle de 0 à 10, quelle est la probabilité que 
+                        vous recommandiez {{ name }} ? <small>( <span class="text-danger">*</span> )</small></label>
+                    <input type="number" class="form-control" name="" min="0" max="10" id="" name="tech_recom" [(ngModel)]="questionnary.tech.recom">
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <label for="exampleFormControlSelect1">Sur une échelle de 0 à 10, comment évaluez-vous la capacité de réaction  
+                        de <strong>{{ name }}</strong> ? <small>( <span class="text-danger">*</span> )</small></label>
+                    <input type="number" class="form-control" name="" min="0" max="10" id="" name="tech_reaction" [(ngModel)]="questionnary.tech.reaction">
+                </div>
+
+                <div class="col-md-12 mb-4">
+                    <label for="exampleFormControlSelect1">Quel a été votre aspect préféré dans la prestation de <strong>{{ name }}</strong> ? <small>( <span class="text-danger">*</span> )</small></label>
+                    <input type="text" class="form-control" name="" id="" name="tech_favorite_look" [(ngModel)]="questionnary.tech.favorite_look">
+                </div>
+
+                <div class="col-md-12 mb-4">
+                    <label for="exampleFormControlInput1">Comment (selon vous) <strong>{{ name }}</strong> peut améliorer ses prestations ? <small>( <span class="text-danger">*</span> )</small></label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="tech_improvements" [(ngModel)]="questionnary.tech.improvements"></textarea>
+                </div> 
+
+                <div class="col-md-12 mb-4">
+                    <label for="exampleFormControlInput1">Avez-vous d'autres commentaires ou suggestions ?</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="tech_sug" [(ngModel)]="questionnary.tech.sug"></textarea>
+                </div> 
+                              
+            </div>
+
+            
+
+        </form>
+    </div>
+
+    <div class="container">
+        <button class="btn btn-primary btn-block" (click)="save()">
+            Enregistrer
+        </button>
+    </div>
+
+</div>
+
+<div class="container-fluid mt-5 p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <small>Copyright ©2022 All rights reserved | by MZ</small>
+            </div>
+            <div class="col-md-4">
+                            
+            </div>
+            <div class="col-md-4">
+                <small style="float: right;">madazada0@gmail.com / +216 51814058
+                </small>
+            </div>
+        </div>
+    </div>
+</div>

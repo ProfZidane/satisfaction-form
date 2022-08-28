@@ -1,0 +1,8 @@
+.bord {
+    border: solid 1px gray;
+    width: 100%;
+}
+
+p {
+    font-size: 15px;
+}

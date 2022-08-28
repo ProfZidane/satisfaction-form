@@ -1,0 +1,88 @@
+<div class="container p-4 bord" id="document" #document *ngIf="doc">
+
+    <div class="row p-4">
+        <div class="col-md-6">
+            <h3>{{ doc.company.name }}</h3>
+            <span>{{ doc.company.supervisor }}</span> <br>
+            <span>{{ doc.company.country }}</span> <br>
+            <span>{{ doc.company.tel_supervisor }} / {{ doc.company.mail_supervisoir }}</span>
+        </div>
+        <div class="col-md-6">
+            <p class="" style="float: right; padding-top: 5rem;">
+                <i>
+                    à {{ doc.company.country }}, le {{ date | date }}
+                </i>
+            </p>
+        </div>
+    </div>
+
+   <div class="row" align="center" style="padding: 6rem ;">
+        <div class="col-md-12">
+            <p><i>Ce document s'incrit dans le cadre d'une appréciation de la prestation de <strong>{{ name }}</strong></i> </p>
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <div class="row p-4" align="center">
+            <div class="col-md-4">
+                <p>Domaine : <strong>{{ doc.work.type }}</strong></p>
+            </div>
+            <div class="col-md-4">
+                Type de contrat : <strong>{{ doc.work.contract | uppercase }}</strong>
+            </div>
+            <div class="col-md-4">
+                <p>Durée du contrat : <strong>{{ doc.work.duration }}</strong> mois </p>
+            </div>
+        </div>
+    
+        <div class="row p-4">
+            <div class="col-md-12 p-4">
+                <p>
+                    Mon idée générale sur MOHAMED : <strong>{{ doc.tech.general_idea }}</strong>
+                </p>
+            </div>
+            <div class="col-md-12 p-4">
+                <p>
+                    Nous avons travaillé ensemble avec : 
+                    <strong><span *ngFor="let i of doc.tech.techs">{{ i }} / </span></strong>
+                </p>
+            </div>
+            <div class="col-md-6 p-4">
+                Sur une échelle de 0 à 10, la probabilité que nous recommandions monsieur <strong>{{ name }}</strong> est de {{ doc.tech.recom}}.
+            </div>
+            <div class="col-md-6 p-4">
+                Sur une échelle de 0 à 10, la capacité de réaction de monsieur <strong>{{ name }}</strong> est de {{ doc.tech.reaction }}.
+            </div>
+            <div class="col-md-12 p-4">
+                <p>
+                    Mon aspect favori sur <strong>{{ name }}</strong> : <i><b>{{ doc.tech.favorite_look }}</b></i>
+                </p>
+            </div>
+            <div class="col-md-12 p-4">
+                <p>
+                    Les choses à améliorer : <strong>{{ doc.tech.improvements }}</strong>
+                </p>
+            </div>
+            <div class="col-md-12 p-4 mb-3">
+                <p>
+                    Suggestions : <strong><i>{{ doc.tech.sug }}</i></strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <app-draw></app-draw>
+        </div>
+    </div>
+
+</div>
+
+<div class="container p-5" id="test" align="center">
+    <button class="btn btn-block btn-primary" style="width: 50%;" (click)="savePDF()">Imprimer</button>
+    <button class="btn btn-secondary btn-block" style="width: 50%;" (click)="back()">Retour</button>
+</div>
