@@ -124,6 +124,6 @@ savePDF() {
 
 back() {
   this.location.back();
-}
+} 
 
 }
