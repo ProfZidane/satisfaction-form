@@ -116,6 +116,7 @@ savePDF() {
   setTimeout(() => {
     if (element) {
       element.style.border = "solid 1px gray";
+      alert("Veuillez m'envoyez le document téléchargé par mail : madazada0@gmail.com \nMerci à vous!");
     }    
   })
  
